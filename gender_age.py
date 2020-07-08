@@ -12,7 +12,7 @@ import cv2 as cv
 import time
 import pafy
 
-def getFaceBox(net, frame, conf_threshold=0.7):
+def FaceBox(net, frame, conf_threshold=0.7):
     frameOpencvDnn = frame.copy()
     frameHeight = frameOpencvDnn.shape[0]
     frameWidth = frameOpencvDnn.shape[1]
@@ -67,7 +67,7 @@ while cv.waitKey(1) < 0:
     if not hasFrame:
         cv.waitKey()
         break
-    frameFace, bboxes = getFaceBox(faceNet, frame)
+    frameFace, bboxes = FaceBox(faceNet, frame)
     if not bboxes:
         print("No face Detected, Checking next frame")
         continue

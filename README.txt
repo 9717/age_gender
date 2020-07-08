@@ -1,5 +1,4 @@
--> PyPower Projects
-||Detect Gender and Age using Artificial Intelligence||
+
 
 
 -> Usage 
@@ -7,3 +6,6 @@
 # Step 2 : Execute the following command to detect from image: python gender_age.py -i 1.jpg  
 # Step 3 : Execute the following command to detect from webcam: python gender_age.py
 
+# You need to download some libraries
+1. opencv (pip install opencv-python)
+2. argparse (pip install argparse)

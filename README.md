@@ -12,5 +12,3 @@
 # You need to download some libraries
 1. opencv (pip install opencv-python)
 2. argparse (pip install argparse)
- # Result 
-![Screenshot](result.jpg)

@@ -29,7 +29,7 @@ def FaceBox(net, frame, conf_threshold=0.7):
             x2 = int(detections[0, 0, i, 5] * frameWidth)
             y2 = int(detections[0, 0, i, 6] * frameHeight)
             bboxes.append([x1, y1, x2, y2])
-            cv.rectangle(frameOpencvDnn, (x1, y1), (x2, y2), (0, 255, 0), int(round(frameHeight/150)), 8)
+            cv.rectangle(frameOpencvDnn, (x1, y1), (x2, y2), (0, 0, 255), int(round(frameHeight/150)), 8)
     return frameOpencvDnn, bboxes
 
 
@@ -90,7 +90,7 @@ while cv.waitKey(1) < 0:
         print("Age : {}, confidence = {:.3f}".format(age, agePreds[0].max()))
 
         label = "{},{}".format(gender, age)
-        cv.putText(frameFace, label, (bbox[0]-5, bbox[1]-10), cv.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0,255), 2, cv.LINE_AA)
+        cv.putText(frameFace, label, (bbox[0]-5, bbox[1]-10), cv.FONT_HERSHEY_SIMPLEX, 0.75, (255, 0,0), 2, cv.LINE_AA)
         cv.imshow("Age Gender Demo", frameFace)
         name = args.i
         cv.imwrite('./detected/'+name,frameFace)
